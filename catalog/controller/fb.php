@@ -16,7 +16,7 @@
 
 			$permissions = ['email', 'user_likes']; // optional
 
-			$loginUrl = $helper->getLoginUrl('https://www.thaicreate.com/login-callback.php', $permissions);
+			$loginUrl = $helper->getLoginUrl('http://ro.fsoftpro.com/index.php?route=fb/fbCallback', $permissions);
 
 			echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 	    }
