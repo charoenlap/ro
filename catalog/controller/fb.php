@@ -40,7 +40,7 @@
 			  echo 'Facebook SDK returned an error: ' . $e->getMessage();
 			  exit;
 			}
-
+			echo 'accessToken: '.$accessToken.'<br>';
 			if (isset($accessToken)) {
 			  // Logged in!
 			  $_SESSION['facebook_access_token'] = (string) $accessToken;
