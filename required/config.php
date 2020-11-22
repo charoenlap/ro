@@ -2,7 +2,7 @@
 	$base = str_replace('required', '', __DIR__);
 	define('MURL','http://localhost/code/');
 	// define('MURL','https://www.fsoftpro.com/dohung/');
-	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/gamemarket/');
+	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
 	// define('AURL',MURL.'admin/');
 	define('DEFAULT_PAGE','home');
 	define('WEB_NAME','Dohung');
