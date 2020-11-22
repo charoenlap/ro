@@ -1,4 +1,8 @@
 <?php
+	ini_set('display_errors', '1');
+	ini_set('display_startup_errors', '1');
+	error_reporting(E_ALL);
+	
 	$base = str_replace('required', '', __DIR__);
 	define('MURL','http://localhost/code/');
 	// define('MURL','https://www.fsoftpro.com/dohung/');
