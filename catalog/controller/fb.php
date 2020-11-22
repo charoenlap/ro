@@ -32,6 +32,7 @@
 			]);
 
 			$helper = $fb->getRedirectLoginHelper();
+			var_dump($helper);
 			try {
 			  $accessToken = $helper->getAccessToken();
 			} catch(Facebook\Exceptions\FacebookResponseException $e) {
