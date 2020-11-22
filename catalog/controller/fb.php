@@ -35,6 +35,8 @@
 			var_dump($helper);
 			try {
 			  $accessToken = $helper->getAccessToken();
+			  echo "<br>";
+			  var_dump($accessToken);
 			} catch(Facebook\Exceptions\FacebookResponseException $e) {
 			  // When Graph returns an error
 			  echo 'Graph returned an error: ' . $e->getMessage();
