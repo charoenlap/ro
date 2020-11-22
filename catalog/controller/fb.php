@@ -11,6 +11,7 @@
 			  'app_secret' => app_secret,
 			  'default_graph_version' => default_graph_version,
 			]);
+			$permissions = array();
 			echo 'app_id: '.app_id;
 			echo 'app_secret: '.app_secret;
 			echo 'default_graph_version: '.default_graph_version;
