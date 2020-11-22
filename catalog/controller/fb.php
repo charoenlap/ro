@@ -14,7 +14,7 @@
 
 			$helper = $fb->getRedirectLoginHelper();
 
-			$permissions = ['email', 'user_likes']; // optional
+			$permissions = ['email']; // optional
 
 			$loginUrl = $helper->getLoginUrl('https://www.ro.fsoftpro.com/fbCallback', $permissions);
 
