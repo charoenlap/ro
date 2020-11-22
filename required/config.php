@@ -25,9 +25,9 @@
 	// define('DB_DB','fsoftpro_dhpro');
 
 	//facebook
-	defind('app_id','2806340296358703');
-	defind('app_secret','e423552c12f34e434aad827438c9301e');
-	defind('default_graph_version','v2.5');
+	define('app_id','2806340296358703');
+	define('app_secret','e423552c12f34e434aad827438c9301e');
+	define('default_graph_version','v2.5');
 
 	// System config 
 	define('DEFAULT_LANGUAGE','2');
