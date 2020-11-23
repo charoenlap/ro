@@ -19,25 +19,36 @@
 			  'app_id' => app_id,
 			  'app_secret' => app_secret,
 			  'default_graph_version' => default_graph_version,
-			]);
+			  ]);
 
 			$helper = $fb->getRedirectLoginHelper();
-			$accessToken = $helper->getAccessToken();
-			// var_dump($helper);
+
 			try {
 			  $accessToken = $helper->getAccessToken();
-			  echo "<br>";
-			  var_dump($accessToken);
-
-			} catch(Facebook\Exceptions\FacebookResponseException $e) {
+			} catch(Facebook\Exception\ResponseException $e) {
 			  // When Graph returns an error
 			  echo 'Graph returned an error: ' . $e->getMessage();
 			  exit;
-			} catch(Facebook\Exceptions\FacebookSDKException $e) {
+			} catch(Facebook\Exception\SDKException $e) {
 			  // When validation fails or other local issues
 			  echo 'Facebook SDK returned an error: ' . $e->getMessage();
 			  exit;
 			}
+
+			if (! isset($accessToken)) {
+			  if ($helper->getError()) {
+			    header('HTTP/1.0 401 Unauthorized');
+			    echo "Error: " . $helper->getError() . "\n";
+			    echo "Error Code: " . $helper->getErrorCode() . "\n";
+			    echo "Error Reason: " . $helper->getErrorReason() . "\n";
+			    echo "Error Description: " . $helper->getErrorDescription() . "\n";
+			  } else {
+			    header('HTTP/1.0 400 Bad Request');
+			    echo 'Bad request';
+			  }
+			  exit;
+			}
+
 			// Logged in
 			echo '<h3>Access Token</h3>';
 			var_dump($accessToken->getValue());
@@ -71,28 +82,9 @@
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
 
-			// echo 'accessToken: '.$accessToken.'<br>';
-			// if (isset($accessToken)) {
-			//   // Logged in!
-			//   $_SESSION['facebook_access_token'] = (string) $accessToken;
-
-			//   // Now you can redirect to another page and use the
-			//   // access token from $_SESSION['facebook_access_token']
-
-			//   $response = $fb->get('/me?fields=id,name,gender,email,link', $accessToken);
-
-			//   $user = $response->getGraphUser();
-			//   echo'<pre>';
-			//   print_r($user);
-			//   echo'</pre>';
-
-			//   echo 'ID: ' . $user['id'];
-			//   echo 'Name: ' . $user['name'];
-			//   echo 'Gener: ' . $user['gener'];
-			//   echo 'Email: ' . $user['email'];
-			//   echo 'Link: ' . $user['link'];
-
-			// }
+			// User is logged in with a long-lived access token.
+			// You can redirect them to a members-only page.
+			//header('Location: https://example.com/members.php');
 	    }
 	}
 ?>
