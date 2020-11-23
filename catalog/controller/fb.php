@@ -85,10 +85,10 @@
 			}
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
-			$data_fb = $accessToken->getValue();
+			$accessToken = $accessToken->getValue();
 			var_dump($data_fb);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me', $_SESSION['fb_access_token']);
+			$res = $fb->get('/me', $accessToken);
 			$result_fb = $res->getDecodedBody();
 			$data = array(
 				'name'	=> $result_fb['name'],
