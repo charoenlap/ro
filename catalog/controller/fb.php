@@ -88,8 +88,8 @@
 			// $data_fb = $accessToken->getValue();
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me', $_SESSION['fb_access_token']);
-			var_dump($res);
-			echo $res->getDecodedBody()->getValue();
+			// var_dump($res);
+			// echo $res->getDecodedBody()->getValue();
 			var_dump($res->getDecodedBody());
 			// var_dump($res->decodedBody);
 			// $result = (array)$res;
