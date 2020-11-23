@@ -80,12 +80,13 @@
 			    exit;
 			  }
 
-			  echo '<h3>Long-lived</h3>';
-			  var_dump($accessToken->getValue());
+			  // echo '<h3>Long-lived</h3>';
+			  // var_dump($accessToken->getValue());
 			}
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
-			// $data_fb = $accessToken->getValue();
+			$data_fb = $accessToken->getValue();
+			var_dump($data_fb);
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me', $_SESSION['fb_access_token']);
 			$result_fb = $res->getDecodedBody();
