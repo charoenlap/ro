@@ -6,6 +6,7 @@
 	use Facebook\FacebookRedirectLoginHelper;
 	class UserController extends Controller {
 	    public function login() {
+	    	var_dump($_SERVER);
 	    	$data = array();
 	    	$fb = new Facebook\Facebook([
 			  'app_id' => app_id,
