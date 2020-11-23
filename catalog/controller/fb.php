@@ -1,27 +1,12 @@
 <?php 
 	require_once(DOCUMENT_ROOT.'system/lib/vendor/facebook/graph-sdk/src/Facebook/autoload.php');
-	use Facebook\FacebookSession;
-	use Facebook\FacebookRequest;
-	use Facebook\GraphUser;
-	use Facebook\FacebookRedirectLoginHelper;
+	// use Facebook\FacebookSession;
+	// use Facebook\FacebookRequest;
+	// use Facebook\GraphUser;
+	// use Facebook\FacebookRedirectLoginHelper;
 	class FbController extends Controller {
 	    public function login($data=array()) {
-			$fb = new Facebook\Facebook([
-			  'app_id' => app_id,
-			  'app_secret' => app_secret,
-			  'default_graph_version' => default_graph_version,
-			]);
-			$permissions = array();
-			echo 'app_id: '.app_id.'<br>';
-			echo 'app_secret: '.app_secret.'<br>';
-			echo 'default_graph_version: '.default_graph_version.'<br>';
-			$helper = $fb->getRedirectLoginHelper();
 
-			// $permissions = ['email']; // optional
-
-			$loginUrl = $helper->getLoginUrl('https://www.ro.fsoftpro.com/fbCallback', $permissions);
-
-			echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 	    }
 	    public function fbCallback($data=array()){
 	    	echo "Connect fb.<br>";
@@ -37,6 +22,7 @@
 			  $accessToken = $helper->getAccessToken();
 			  echo "<br>";
 			  var_dump($accessToken);
+			  
 			} catch(Facebook\Exceptions\FacebookResponseException $e) {
 			  // When Graph returns an error
 			  echo 'Graph returned an error: ' . $e->getMessage();

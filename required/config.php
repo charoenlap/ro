@@ -6,7 +6,12 @@
 	$base = str_replace('required', '', __DIR__);
 	define('MURL','http://localhost/code/');
 	// define('MURL','https://www.fsoftpro.com/dohung/');
-	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
+
+	// devolop
+	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/gamemarket/');
+	// production
+	// define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
+
 	// define('AURL',MURL.'admin/');
 	define('DEFAULT_PAGE','home');
 	define('WEB_NAME','Dohung');
@@ -19,7 +24,7 @@
 	define('DB_HOST','localhost');
 	define('DB_USER','root');
 	define('DB_PASS','root');
-	define('DB_DB','fsoftpro_oilbc');
+	define('DB_DB','kkgame');
 
 	// Production
 	// define('PREFIX', 'dh_');
@@ -31,7 +36,7 @@
 	//facebook
 	define('app_id','2806340296358703');
 	define('app_secret','e423552c12f34e434aad827438c9301e');
-	define('default_graph_version','v2.5');
+	define('default_graph_version','v5.0');
 
 	// System config 
 	define('DEFAULT_LANGUAGE','2');

@@ -28,7 +28,7 @@
         <div class="col-4 py-4">
           <h4 class="text-white">สมาชิก</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">เข้าสู่ระบบ</a></li>
+            <li><a href="<?php echo route('user/login'); ?>" class="text-white">เข้าสู่ระบบ</a></li>
             <li><a href="#" class="text-white">สมัครสมาชิก</a></li>
             <li><a href="#" class="text-white">ข้อมูลส่วนตัว</a></li>
             <li><a href="#" class="text-white">ยืนยันตัวตน</a></li>
