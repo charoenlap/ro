@@ -89,10 +89,12 @@
 			if(!empty($_SESSION['fb_access_token'])){
 				$res = $fb->get('/me', $_SESSION['fb_access_token']);
 				// var_dump($res->decodedBody);
+				echo "<pre>";
 				var_dump($res);
+				echo "</pre>";
 			}
 			// if(isset($tokenMetadata['user_id'])){
-			$user_id = $tokenMetadata['user_id'];
+			// $user_id = $tokenMetadata['user_id'];
 			// }
 
 			// User is logged in with a long-lived access token.
