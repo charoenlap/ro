@@ -88,11 +88,12 @@
 			// $data_fb = $accessToken->getValue();
 			if(!empty($_SESSION['fb_access_token'])){
 				$res = $fb->get('/me', $_SESSION['fb_access_token']);
-				var_dump($res);
+				var_dump($res->decodedBody);
+				// var_dump($res);
 			}
-			if(isset($tokenMetadata['user_id'])){
-				$user_id = $tokenMetadata['user_id'];
-			}
+			// if(isset($tokenMetadata['user_id'])){
+			$user_id = $tokenMetadata['user_id'];
+			// }
 
 			// User is logged in with a long-lived access token.
 			// You can redirect them to a members-only page.
