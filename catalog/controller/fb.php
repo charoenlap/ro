@@ -10,7 +10,7 @@
 	    }
 	    public function fbCallback($data=array()){
 	    	echo "Connect fb.<br>";
-	    	Facebook\FacebookSession::setDefaultApplication('app_id', 'app_secret');
+	    	Facebook\FacebookSession::setDefaultApplication(app_id, app_secret);
 	    	$helper = new Facebook\FacebookRedirectLoginHelper(redirect_url);
 	    	$session = $helper->getSessionFromRedirect();
 	    	$_SESSION['facebook_access_token'] = $session->getToken();
