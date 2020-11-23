@@ -8,9 +8,9 @@
 	// define('MURL','https://www.fsoftpro.com/dohung/');
 
 	// devolop
-	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/gamemarket/');
+	// define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/gamemarket/');
 	// production
-	// define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
+	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
 
 	// define('AURL',MURL.'admin/');
 	define('DEFAULT_PAGE','home');
