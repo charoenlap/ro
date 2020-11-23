@@ -1,5 +1,5 @@
 <?php 
-	require_once(DOCUMENT_ROOT.'system/lib/vendor/facebook/graph-sdk/src/Facebook/autoload.php');
+	require_once(convert_private_to_public(DOCUMENT_ROOT).'system/lib/vendor/facebook/graph-sdk/src/Facebook/autoload.php');
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRequest;
 	use Facebook\GraphUser;
