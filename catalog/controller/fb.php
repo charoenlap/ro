@@ -22,6 +22,7 @@
 			]);
 
 			$helper = $fb->getRedirectLoginHelper();
+			$accessToken = $helper->getAccessToken();
 			// var_dump($helper);
 			try {
 			  $accessToken = $helper->getAccessToken();
@@ -37,8 +38,8 @@
 			  echo 'Facebook SDK returned an error: ' . $e->getMessage();
 			  exit;
 			}
-			echo '<h3>Access Token</h3>';
-			var_dump($accessToken->getValue());
+			// echo '<h3>Access Token</h3>';
+			// var_dump($accessToken->getValue());
 			// echo 'accessToken: '.$accessToken.'<br>';
 			// if (isset($accessToken)) {
 			//   // Logged in!
