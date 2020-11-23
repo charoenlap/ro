@@ -6,7 +6,7 @@
 	use Facebook\FacebookRedirectLoginHelper;
 	class UserController extends Controller {
 	    public function login() {
-	    	var_dump($_SERVER);
+	    	// var_dump($_SERVER);
 	    	$data = array();
 	    	$fb = new Facebook\Facebook([
 			  'app_id' => app_id,
@@ -21,7 +21,7 @@
 
 			// $permissions = ['email']; // optional
 
-			$data['loginUrl'] = $helper->getLoginUrl('https://www.ro.fsoftpro.com/fbCallback', $permissions);
+			$data['loginUrl'] = $helper->getLoginUrl(redirect_url, $permissions);
 	    	$this->view('user/login',$data);
 	    }
 	}
