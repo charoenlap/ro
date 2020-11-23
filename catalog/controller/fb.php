@@ -81,16 +81,22 @@
 			  }
 
 			  // echo '<h3>Long-lived</h3>';
-			  // var_dump($accessToken->getValue());
+			  var_dump($accessToken->getValue());
 			}
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
 			// $data_fb = $accessToken->getValue();
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me', $_SESSION['fb_access_token']);
+			$result_fb = $res->getDecodedBody();
+			$data = array(
+				'name'	=> $result_fb['name'],
+				'id'	=> $result_fb['id']
+			);
+			var_dump($data);
 			// var_dump($res);
 			// echo $res->getDecodedBody()->getValue();
-			var_dump($res->getDecodedBody());
+			// var_dump();
 			// var_dump($res->decodedBody);
 			// $result = (array)$res;
 			// echo "<pre>";
