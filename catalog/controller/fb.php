@@ -88,11 +88,12 @@
 			// $data_fb = $accessToken->getValue();
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me', $_SESSION['fb_access_token']);
+			var_dump($res);
 			// var_dump($res->decodedBody);
-			$result = (array)$res;
-			echo "<pre>";
-			var_dump($result['decodedBody']);
-			echo "</pre>";
+			// $result = (array)$res;
+			// echo "<pre>";
+			// var_dump($result['decodedBody']);
+			// echo "</pre>";
 			// }
 			// if(isset($tokenMetadata['user_id'])){
 			// $user_id = $tokenMetadata['user_id'];
