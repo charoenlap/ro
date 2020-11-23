@@ -9,7 +9,7 @@
 
 	    }
 	    public function fbCallback($data=array()){
-	    	echo "Connect fb.<br>";
+	    	echo "Connect fb process.<br>";
 	    	// Facebook\FacebookSession::setDefaultApplication(app_id, app_secret);
 	    	// $helper = new Facebook\FacebookRedirectLoginHelper(redirect_url);
 	    	// $session = $helper->getSessionFromRedirect();
@@ -52,16 +52,16 @@
 			}
 
 			// Logged in
-			echo '<h3>Access Token</h3>';
-			var_dump($accessToken->getValue());
+			// echo '<h3>Access Token</h3>';
+			// var_dump($accessToken->getValue());
 
 			// The OAuth 2.0 client handler helps us manage access tokens
 			$oAuth2Client = $fb->getOAuth2Client();
 
 			// Get the access token metadata from /debug_token
 			$tokenMetadata = $oAuth2Client->debugToken($accessToken);
-			echo '<h3>Metadata</h3>';
-			var_dump($tokenMetadata);
+			// echo '<h3>Metadata</h3>';
+			// var_dump($tokenMetadata);
 
 			// Validation (these will throw FacebookSDKException's when they fail)
 			$tokenMetadata->validateAppId(app_id);
@@ -78,12 +78,13 @@
 			    exit;
 			  }
 
-			  echo '<h3>Long-lived</h3>';
-			  var_dump($accessToken->getValue());
+			  // echo '<h3>Long-lived</h3>';
+			  // var_dump($accessToken->getValue());
 			}
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
-
+			$data_fb = $accessToken->getValue();
+			var_dump($data_fb);
 			// User is logged in with a long-lived access token.
 			// You can redirect them to a members-only page.
 			//header('Location: https://example.com/members.php');
