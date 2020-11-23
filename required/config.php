@@ -4,13 +4,19 @@
 	error_reporting(E_ALL);
 	
 	$base = str_replace('required', '', __DIR__);
-	define('MURL','http://localhost/code/');
+	
 	// define('MURL','https://www.fsoftpro.com/dohung/');
 
 	// devolop
 	// define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/gamemarket/');
+	// var_dump($_SERVER);exit();
+	$add_path = '';
+	if($_SERVER['HTTP_HOST']=="local" OR $_SERVER['HTTP_HOST']=="localhost"){
+		$add_path = "gamemarket";
+	}
+	define('MURL','http://localhost/code/');
 	// production
-	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/');
+	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/'.$add_path.'/');
 
 	// define('AURL',MURL.'admin/');
 	define('DEFAULT_PAGE','home');

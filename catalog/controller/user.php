@@ -8,24 +8,24 @@
 	    public function login() {
 	    	// var_dump($_SERVER);
 	    	$data = array();
-	    	Facebook\FacebookSession::setDefaultApplication(app_id, app_secret);
-	  //   	$fb = new Facebook\Facebook([
-			//   'app_id' => app_id,
-			//   'app_secret' => app_secret,
-			//   'default_graph_version' => default_graph_version,
-			// ]);
-			$callback = redirect_url;
-			$helper = new Facebook\FacebookRedirectLoginHelper($callback);
-			$data['loginUrl'] = $helper->getLoginUrl($permissions);
-			// $permissions = array();
+	    	// Facebook\FacebookSession::setDefaultApplication(app_id, app_secret);
+	    	$fb = new Facebook\Facebook([
+			  'app_id' => app_id,
+			  'app_secret' => app_secret,
+			  'default_graph_version' => default_graph_version,
+			]);
+			// $callback = redirect_url;
+			// $helper = new Facebook\FacebookRedirectLoginHelper($callback);
+			// $data['loginUrl'] = $helper->getLoginUrl($permissions);
+			$permissions = array();
 			// echo 'app_id: '.app_id.'<br>';
 			// echo 'app_secret: '.app_secret.'<br>';
 			// echo 'default_graph_version: '.default_graph_version.'<br>';
-			// $helper = $fb->getRedirectLoginHelper();
+			$helper = $fb->getRedirectLoginHelper();
 
 			// $permissions = ['email']; // optional
 
-			// $data['loginUrl'] = $helper->getLoginUrl(redirect_url, $permissions);
+			$data['loginUrl'] = $helper->getLoginUrl(redirect_url, $permissions);
 	    	$this->view('user/login',$data);
 	    }
 	}
