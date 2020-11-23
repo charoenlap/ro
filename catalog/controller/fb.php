@@ -22,13 +22,11 @@
 			  ]);
 
 			$helper = $fb->getRedirectLoginHelper();
-			$_SESSION['FBRLH_state']=$_GET['state'];
+			// $_SESSION['FBRLH_state']=$_GET['state'];
 
 
 			try {
 			  $accessToken = $helper->getAccessToken(redirect_url);
-			  echo "accessToken";
-			  var_dump($accessToken);
 			} catch(Facebook\Exception\ResponseException $e) {
 			  // When Graph returns an error
 			  echo 'Graph returned an error: ' . $e->getMessage();
