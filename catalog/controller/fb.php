@@ -1,5 +1,5 @@
 <?php 
-	require_once(DOCUMENT_ROOT.'system/lib/vendor/facebook/graph-sdk/src/Facebook/autoload.php');
+	require_once(convert_private_to_public(DOCUMENT_ROOT).'system/lib/vendor/facebook/graph-sdk/src/Facebook/autoload.php');
 	// use Facebook\FacebookSession;
 	// use Facebook\FacebookRequest;
 	// use Facebook\GraphUser;
@@ -22,7 +22,7 @@
 			  $accessToken = $helper->getAccessToken();
 			  echo "<br>";
 			  var_dump($accessToken);
-			  
+
 			} catch(Facebook\Exceptions\FacebookResponseException $e) {
 			  // When Graph returns an error
 			  echo 'Graph returned an error: ' . $e->getMessage();

@@ -1,4 +1,8 @@
 <?php
+	function convert_private_to_public($path){
+		$new_path = str_replace('private_html','public_html',$path);
+		return $new_path;
+	}
 	function lang($text='',$index=''){
 		$result = $text;
 		return $result;
