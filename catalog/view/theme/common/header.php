@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><?php echo $title;?></title>
+  <title><?php echo (isset($title)?$title:'');?></title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="node_modules/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>

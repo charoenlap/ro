@@ -10,6 +10,7 @@
 	    }
 	    public function fbCallback($data=array()){
 	    	$tokenMetadata = array();
+	    	$user_id = '';
 	    	echo "Connect fb process.<br>";
 	    	// Facebook\FacebookSession::setDefaultApplication(app_id, app_secret);
 	    	// $helper = new Facebook\FacebookRedirectLoginHelper(redirect_url);
@@ -85,7 +86,14 @@
 
 			$_SESSION['fb_access_token'] = (string) $accessToken;
 			// $data_fb = $accessToken->getValue();
-			var_dump($tokenMetadata);
+			if(!empty($_SESSION['fb_access_token'])){
+				$res = $fb->get('/me', $_SESSION['fb_access_token']);
+				var_dump($res);
+			}
+			if(isset($tokenMetadata['user_id'])){
+				$user_id = $tokenMetadata['user_id'];
+			}
+
 			// User is logged in with a long-lived access token.
 			// You can redirect them to a members-only page.
 			//header('Location: https://example.com/members.php');
