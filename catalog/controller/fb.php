@@ -90,7 +90,7 @@
 			$res = $fb->get('/me', $_SESSION['fb_access_token']);
 			// var_dump($res->decodedBody);
 			echo "<pre>";
-			var_dump((array)$res);
+			var_dump((array)$res['*decodedBody']);
 			echo "</pre>";
 			// }
 			// if(isset($tokenMetadata['user_id'])){
