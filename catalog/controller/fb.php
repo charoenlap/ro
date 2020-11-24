@@ -89,7 +89,7 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=name,id,email', $accessToken);
+			$res = $fb->get('/me?fields=name,id,email,public_profile', $accessToken);
 			$result_fb = $res->getDecodedBody();
 			var_dump($result_fb);
 			// $res_img_profile = $fb->get('/me/picture', $accessToken);
