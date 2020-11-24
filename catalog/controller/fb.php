@@ -22,7 +22,8 @@
 			  'app_secret' => app_secret,
 			  'default_graph_version' => default_graph_version,
 			  ]);
-
+			$user = $fb->getUser();
+			echo $user.'<br>';
 			$helper = $fb->getRedirectLoginHelper();
 			$_SESSION['FBRLH_state']=$_GET['state'];
 
@@ -95,6 +96,7 @@
 				'name'	=> $result_fb['name'],
 				'id'	=> $result_fb['id']
 			);
+			// 100006762066686
 			var_dump($data);
 			// var_dump($res);
 			// echo $res->getDecodedBody()->getValue();
