@@ -89,7 +89,7 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=name,id,email', $accessToken);
+			$res = $fb->get('/me?fields=name,id,email,link', $accessToken);
 			// var_dump($res);
 			echo "<br><br>";
 			var_dump($res->getGraphUser());
@@ -101,7 +101,7 @@
 				'id'	=> $result_fb['id']
 			);
 			// 100006762066686
-			var_dump($data);
+			// var_dump($data);
 			// var_dump($res);
 			// echo $res->getDecodedBody()->getValue();
 			// var_dump();
