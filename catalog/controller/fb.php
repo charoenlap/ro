@@ -22,8 +22,8 @@
 			  'app_secret' => app_secret,
 			  'default_graph_version' => default_graph_version,
 			  ]);
-			$user = $fb->getOAuth2Client();
-			var_dump($user);
+			// $user = $fb->getOAuth2Client();
+			// var_dump($user);
 			$helper = $fb->getRedirectLoginHelper();
 			$_SESSION['FBRLH_state']=$_GET['state'];
 
@@ -90,9 +90,10 @@
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me?fields=name,id,email', $accessToken);
-			var_dump($res);
+			// var_dump($res);
 			echo "<br><br>";
 			var_dump($res->getGraphUser());
+			echo "<br>----<br>";
 			$result_fb = $res->getDecodedBody();
 			var_dump($result_fb);
 			$data = array(
