@@ -93,7 +93,7 @@
 			$result_fb = $res->getDecodedBody();
 			// var_dump($result_fb);
 			$res_img_profile = $fb->get('/me/picture', $accessToken);
-			$result_fb_img_profile = $res->getDecodedBody();
+			$result_fb_img_profile = $res_img_profile->getDecodedBody();
 
 			$data = array(
 				'name'		=> $result_fb['name'],
