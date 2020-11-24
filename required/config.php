@@ -42,7 +42,7 @@
 	//facebook
 	define('app_id','2806340296358703');
 	define('app_secret','e423552c12f34e434aad827438c9301e');
-	define('default_graph_version','v2.2');
+	define('default_graph_version','v9.0');
 	define('redirect_url','https://www.ro.fsoftpro.com/index.php?route=fb/fbCallback');
 
 	// System config 
