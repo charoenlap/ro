@@ -22,8 +22,8 @@
 			  'app_secret' => app_secret,
 			  'default_graph_version' => default_graph_version,
 			  ]);
-			$user = $fb->getUser();
-			echo $user.'<br>';
+			$user = $fb->getOAuth2Client();
+			var_dump($user);
 			$helper = $fb->getRedirectLoginHelper();
 			$_SESSION['FBRLH_state']=$_GET['state'];
 
