@@ -89,11 +89,8 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=id,first_name,last_name,email,gender,locale,picture', $accessToken);
+			$res = $fb->get('/me?fields=id,first_name,last_name,email,gender,locale,picture,link,username', $accessToken);
 			var_dump($res);
-
-			$res_v = $fb->api('/me');
-			var_dump($res_v);
 			// $userClass = new User;
 			// $userData = $userClass->checkFBUserData($userProfile);
 
@@ -109,6 +106,8 @@
 				'first_name'	=> $result_fb['first_name'],
 				'last_name'		=> $result_fb['last_name'],
 				'email'			=> $result_fb['email'],
+				'link'			=> $result_fb['link'],
+				'username'		=> $result_fb['username']
 				// 'gender'	=> $result_fb['gender']
 			);
 			var_dump($data);
