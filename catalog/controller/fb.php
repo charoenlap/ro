@@ -89,19 +89,17 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=name,id,email,age_range,link', $accessToken);
-			// var_dump($res);
-			// echo "<br><br>";
-			// var_dump($res);
-			// echo "<br>----<br>";
+			$res = $fb->get('/me?fields=name,id,email', $accessToken);
 			$result_fb = $res->getDecodedBody();
-			var_dump($result_fb);
+			// var_dump($result_fb);
+			$res_img_profile = $fb->get('/me/picture', $accessToken);
+			$result_fb_img_profile = $res->getDecodedBody();
+
 			$data = array(
 				'name'		=> $result_fb['name'],
 				'id'		=> $result_fb['id'],
 				'email'		=> $result_fb['email'],
-				'age_range'	=> $result_fb['age_range'],
-				'link'		=> $result_fb['link']
+				'picture'	=> $result_fb_img_profile
 			);
 			// 100006762066686
 			// var_dump($data);

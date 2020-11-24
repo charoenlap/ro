@@ -23,7 +23,7 @@
 			// echo 'default_graph_version: '.default_graph_version.'<br>';
 			$helper = $fb->getRedirectLoginHelper();
 
-			$permissions = ['email','user_profile','user_likes'];
+			$permissions = ['email'];
 
 			$data['loginUrl'] = $helper->getLoginUrl(redirect_url, $permissions);
 	    	$this->view('user/login',$data);
