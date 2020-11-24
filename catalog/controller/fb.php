@@ -101,6 +101,7 @@
 				'email'		=> $result_fb['email'],
 				'picture'	=> $result_fb_img_profile
 			);
+			var_dump($data);
 			// 100006762066686
 			// var_dump($data);
 			// var_dump($res);
