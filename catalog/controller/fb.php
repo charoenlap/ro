@@ -91,6 +91,9 @@
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me?fields=id,first_name,last_name,email,gender,locale,picture', $accessToken);
 			var_dump($res);
+
+			$res_v = $fb->api('/me');
+			var_dump($res_v);
 			// $userClass = new User;
 			// $userData = $userClass->checkFBUserData($userProfile);
 
