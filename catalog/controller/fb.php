@@ -89,7 +89,7 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=name,id,email,gender', $accessToken);
+			$res = $fb->get('/me?fields=name,id,email,gender,link', $accessToken);
 			$result_fb = $res->getDecodedBody();
 			var_dump($result_fb);
 			// $res_img_profile = $fb->get('/me/picture', $accessToken);
@@ -97,9 +97,9 @@
 
 			$data = array(
 				'name'		=> $result_fb['name'],
-				'id'		=> $result_fb['id'],
-				'email'		=> $result_fb['email'],
-				'gender'	=> $result_fb['gender']
+				'id'		=> $result_fb['id']
+				// 'email'		=> $result_fb['email'],
+				// 'gender'	=> $result_fb['gender']
 			);
 			var_dump($data);
 			// 100006762066686
