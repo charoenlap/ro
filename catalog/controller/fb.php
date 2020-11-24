@@ -91,6 +91,8 @@
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me?fields=name,id,email', $accessToken);
 			var_dump($res);
+			echo "<br><br>";
+			var_dump($res->getGraphUser());
 			$result_fb = $res->getDecodedBody();
 			var_dump($result_fb);
 			$data = array(
