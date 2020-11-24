@@ -91,15 +91,14 @@
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me?fields=name,id,email', $accessToken);
 			$result_fb = $res->getDecodedBody();
-			// var_dump($result_fb);
-			$res_img_profile = $fb->get('/me/picture', $accessToken);
-			$result_fb_img_profile = $res_img_profile->getDecodedBody();
+			var_dump($result_fb);
+			// $res_img_profile = $fb->get('/me/picture', $accessToken);
+			// $result_fb_img_profile = $res_img_profile->getDecodedBody();
 
 			$data = array(
 				'name'		=> $result_fb['name'],
 				'id'		=> $result_fb['id'],
-				'email'		=> $result_fb['email'],
-				'picture'	=> $result_fb_img_profile
+				'email'		=> $result_fb['email']
 			);
 			var_dump($data);
 			// 100006762066686
