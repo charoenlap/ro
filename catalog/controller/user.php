@@ -24,7 +24,7 @@
 			$helper = $fb->getRedirectLoginHelper();
 
 			$permissions = ['email'];
-			$permissions = ['gender'];
+			$permissions = ['age_range'];
 
 			$data['loginUrl'] = $helper->getLoginUrl(redirect_url, $permissions);
 	    	$this->view('user/login',$data);

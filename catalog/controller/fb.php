@@ -89,7 +89,7 @@
 			$accessToken = $accessToken->getValue();
 			// var_dump($accessToken);
 			// if(!empty($_SESSION['fb_access_token'])){
-			$res = $fb->get('/me?fields=name,id,email,gender', $accessToken);
+			$res = $fb->get('/me?fields=name,id,email,age_range', $accessToken);
 			// var_dump($res);
 			// echo "<br><br>";
 			// var_dump($res);
@@ -100,7 +100,7 @@
 				'name'		=> $result_fb['name'],
 				'id'		=> $result_fb['id'],
 				'email'		=> $result_fb['email'],
-				'gender'	=> $result_fb['gender']
+				'age_range'	=> $result_fb['age_range']
 			);
 			// 100006762066686
 			// var_dump($data);
