@@ -101,12 +101,13 @@
 			// $result_fb_img_profile = $res_img_profile->getDecodedBody();
 
 			$data = array(
-				'name'			=> $result_fb['name'],
+				// 'name'			=> $result_fb['name'],
 				'id'			=> $result_fb['id'],
 				'first_name'	=> $result_fb['first_name'],
 				'last_name'		=> $result_fb['last_name'],
 				'email'			=> $result_fb['email'],
-				'link'			=> $result_fb['link']
+				'picture'		=> $result_fb['picture']['data']['url']
+				// 'link'			=> $result_fb['link']
 				// 'gender'	=> $result_fb['gender']
 			);
 			var_dump($data);
