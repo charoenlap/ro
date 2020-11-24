@@ -91,8 +91,8 @@
 			// if(!empty($_SESSION['fb_access_token'])){
 			$res = $fb->get('/me?fields=id,first_name,last_name,email,gender,locale,picture', $accessToken);
 			var_dump($res);
-			$userClass = new User;
-			$userData = $userClass->checkFBUserData($userProfile);
+			// $userClass = new User;
+			// $userData = $userClass->checkFBUserData($userProfile);
 
 
 			$result_fb = $res->getDecodedBody();
@@ -101,9 +101,11 @@
 			// $result_fb_img_profile = $res_img_profile->getDecodedBody();
 
 			$data = array(
-				'name'		=> $result_fb['name'],
-				'id'		=> $result_fb['id']
-				// 'email'		=> $result_fb['email'],
+				'name'			=> $result_fb['name'],
+				'id'			=> $result_fb['id'],
+				'first_name'	=> $result_fb['first_name'],
+				'last_name'		=> $result_fb['last_name'],
+				'email'			=> $result_fb['email'],
 				// 'gender'	=> $result_fb['gender']
 			);
 			var_dump($data);
